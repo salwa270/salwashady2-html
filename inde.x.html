@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>salwashady</title>
+    
+    <link rel="icon" href="assets/image/about profile.png">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@30y=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+
+:root {
+  --bg-color: black;
+  --second-bg-color: #171b21;
+  --text-color: #ffffffe2;
+  --main-color: #4a278d;
+  --transition: all 0.4s ease-in;
+}
+
+
+html {
+  font-size: 15.5px;
+  overflow-x: hidden;
+}
+
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+section {
+  min-height: 100vh;
+  max-width: 100%;
+  padding: 7rem 9% 2rem;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 9%;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+.logo {
+  font-size: 3.2rem;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: default;
+}
+.navbar a {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-left: 3.5rem;
+  transition: 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+}
+#menu-icon {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-right: 10px;
+  display: none;
+}
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  margin-top: 5rem;
+  margin-right: -2rem;
+  z-index: 1;
+}
+
+.home-img img {
+  width: 23vw;
+  aspect-ratio: 1 / 1;       
+  object-fit: cover;      
+  border-radius: 50%;        
+  border: 4px solid #6a00ff;  
+  
+  filter: drop-shadow(2px 2px 10px #6a00ff); 
+  
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.home-content {
+  margin-top: -10rem;
+  width: 90%;
+}
+.home-content h3 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.home-content h3:nth-child(1) {
+  margin-top: 10rem;
+}
+span {
+  color: var(--main-color);
+}
+.home-content h2 {
+  color: var(--main-color);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 2.5rem 0;
+  transition: 0.3s ease;
+}
+.social-media a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.3rem;
+  color: var(--second-bg-color);
+  font-weight: 600;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  box-shadow: none;
+}
+
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--second-bg-color);
+}
+/* تم توحيد تنسيق صورة قسم About مع Home */
+.about-img {
+  width: 23vw;
+  aspect-ratio: 1 / 1;       
+  object-fit: cover;      
+  border-radius: 50%;        
+  border: 4px solid #6a00ff;  
+  filter: drop-shadow(2px 2px 10px #6a00ff); 
+  animation: floatImage 4s ease-in-out infinite;
+}
+.about-img img {
+  width: 100%; /* اجعل الصورة تملأ الـ div */
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3.5rem;
+}
+.about-content h2 {
+  text-align: left;
+  line-height: 1.2;
+}
+.about-content h3 {
+  font-size: 2.1rem;
+}
+.about-content p {
+  font-size: 1.1rem;
+  margin: 2rem 0 3rem;
+}
+
+
+#skills h1 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-60px);
+  animation: skillsDrop 1s ease forwards;
+}
+@keyframes skillsDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#skills span {
+  color: var(--main-color);
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.skills-container .skill-box {
+  /* استخدام flex-basis لضمان 3 أعمدة تقريباً في الشاشات العريضة */
+  flex: 1 1 calc(30% - 2rem); 
+  background: var(--second-bg-color);
+  padding: 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 0.2rem solid var(--bg-color);
+  transition: 0.5s ease;
+}
+.skills-container .skill-box:hover {
+  transform: scale(0.9);
+  box-shadow: 5px 5px 10px var(--main-color);
+  border-color: var(--main-color);
+}
+.skill-badge {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  margin: 0 auto 1rem; /* توسيط البادج */
+}
+.skill-badge img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+
+.projects {
+  background: var(--second-bg-color);
+}
+.projects h2 {
+  margin-bottom: 5rem;
+}
+/* تنسيق الشبكة لـ 3 أعمدة */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تصميم مرن يضمن 3 أعمدة في الشاشات الكبيرة */
+  align-items: center;
+  gap: 1.5rem;
+}
+.projects-container .projects-box {
+  position: relative;
+  width: 100%;
+  height: 300px; /* ارتفاع ثابت للمشاريع */
+  border-radius: 2rem;
+  /* ✨ تم تجميل ظل الصندوق لجعله أكثر بروزاً */
+  box-shadow: 0 0 1.5rem rgba(74, 39, 141, 0.5); /* ظل بلون الـ main-color مع شفافية */
+  overflow: hidden;
+  display: flex;
+  border: 2px solid rgba(74, 39, 141, 0.5); /* إضافة حد خفيف */
+}
+.projects-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* لضمان ملء الصورة للصندوق بدون تشوه */
+  transition: 0.5s ease;
+  /* ✨ إضافة تأثير ضبابي خفيف على الصورة لتمييزها */
+  filter: brightness(0.9); 
+}
+.projects-box:hover img {
+  transform: scale(1.1);
+  filter: brightness(1); /* إلغاء الضبابية عند التحويم */
+}
+.projects-box .projects-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+.projects-box:hover .projects-layer {
+  transform: translateY(0);
+}
+.projects-layer h4 {
+  font-size: 2.1rem;
+}
+.projects-layer p {
+  font-size: 1.1rem;
+  margin: 0.3rem 0 1rem;
+}
+.projects-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--text-color);
+  border-radius: 50%;
+}
+.projects-layer a i {
+  font-size: 1.5rem;
+  color: var(--second-bg-color);
+}
+
+
+.contact h2 {
+  margin-top: 7rem;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+.contact-icons a {
+  position: relative;
+  font-size: 3rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+.contact-icons i {
+  transition: opacity 0.3s ease;
+}
+.contact-icons .text {
+  position: absolute;
+  opacity: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+}
+.contact-icons a:hover i {
+  opacity: 0;
+}
+.contact-icons a:hover .text {
+  opacity: 1;
+}
+.contact-icons a.gmail,
+.contact-icons a.gmail:hover .text {
+  color: #D44638;
+}
+
+
+#Nasa {
+    background: var(--bg-color); /* فصل تنسيق قسم ناسا */
+}
+#Nasa .projects-box {
+  max-width: 400px;
+  height: 300px;
+  margin: auto;
+}
+#Nasa .projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 9%;
+  background: var(--second-bg-color);
+}
+.footer-text p {
+  font-size: 1.1rem;
+}
+.footer-iconTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: var(--main-color);
+  border-radius: 0.5rem;
+  transition: 0.5s ease;
+}
+.footer-iconTop a:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+}
+.footer-iconTop a i {
+  font-size: 1.5rem;
+  color: var(--second-bg-color);
+}
+
+    </style>
+  </head>
+  <body>
+    
+    <header class="header">
+      <a href="#" class="logo">sal<span>wa</span></a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#Nasa">Nasa</a>
+      </nav>
+    </header>
+
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello,</h3>
+        <h2>I'm salwa</h2>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <div class="social-media">
+          <a href="https://github.com/salwa270"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/salwa-shady?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <a href="https://drive.google.com/file/d/1eRjGjiczOYwHW5wmOtnh2OAZYJvVt0Iw/view?usp=drivesdk" class="btn">View CV</a> 
+      </div>
+      <div class="home-img">
+        <img src="SALWA.jpg" alt="Home Profile" />
+      </div>
+    </section>
+
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="SALWA.jpg" alt="About Profile" />
+      </div>
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <p>
+          I’m salwa, a Computer Science student at the Faculty of Computers and Informatics. My track is Front-End Development, and I work with HTML5, CSS3, JavaScript (ES7), Tailwind CSS, Bootstrap, and React.js.
+          I build fully responsive websites that work smoothly across all devices, with clean design and high performance. I also have strong problem-solving skills, which help me write efficient code and deliver creative solutions.
+        </p>
+      </div>
+    </section>
+
+   
+  <section id="skills">
+  <h1>Ski<span>lls</span></h1>
+  <div class="skills-container">
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      </div>
+      <div class="skill-name">HTML5</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      </div>
+      <div class="skill-name">CSS3</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      </div>
+      <div class="skill-name">JS (ES7)</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS">
+      </div>
+      <div class="skill-name">Tailwind CSS</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+      </div>
+      <div class="skill-name">Bootstrap</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js">
+      </div>
+      <div class="skill-name">React.js</div>
+    </div>
+    
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Git & GitHub">
+      </div>
+      <div class="skill-name">Git & GitHub</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      </div>
+      <div class="skill-name">C++</div>
+    </div>
+     <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="My SQL">
+      </div>
+      <div class="skill-name">My SQL</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-badge">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      </div>
+      <div class="skill-name">Python</div>
+    </div>
+  </div>
+</section>
+
+   
+
+    <section class="projects" id="projects">
+      <h2 class="heading">Latest <span>Projects</span></h2>
+      <div class="projects-container">
+        
+        <div class="projects-box">
+          <img src="coffee.png" alt="Coffee Project" />
+          <div class="projects-layer">
+            <h4>Coverly E-Commerce (Coffee)</h4>
+          
+            <a href="https://salwashady38-star.github.io/ice-coffe-salwa-html/cofffe.html"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="projects-box">
+          <img src="WhatsApp Image 2025-12-07 at 00.30.43_1c9ceed8.jpg" alt="Sushi Website" />
+          <div class="projects-layer">
+            <h4>Sushi Website</h4>
+          
+            <a href="https://salwashady38-star.github.io/sushi-js/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="calculator.png" alt="Online Calculator" />
+          <div class="projects-layer">
+            <h4>Online Calculator</h4>
+            
+            <a href="https://salwashady38-star.github.io/online-calculator/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="img.png" alt="Delivery DashBoard" />
+          <div class="projects-layer">
+            <h4>Delivery DashBoard</h4>
+        
+            <a href="https://salwashady38-star.github.io/Faazzllook/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="Screenshot 2025-12-06 150516.png" alt="Teacher System" />
+          <div class="projects-layer">
+            <h4>Teacher System</h4>
+            <p>Team Member</p>
+            <a href="https://salwa270.github.io/new-project-html/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="Screenshot 2025-12-06 150842.png" alt="Product Management System" />
+          <div class="projects-layer">
+            <h4>Product Management System</h4>
+            
+            <a href="https://salwa270.github.io/bodysplash-html/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="Screenshot 2025-12-06 151213.png" alt="Wonders Of The World (Space Journey)" />
+          <div class="projects-layer">
+            <h4>Wonders Of The World (Space Journey)</h4>
+             
+             <a href="https://salwa257.github.io/burger.salwashady-html/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="projects-box">
+          <img src="WhatsApp Image 2025-12-06 at 15.18.03_c2c08eec.jpg" alt="Wonders Of The World (Modern)" />
+          <div class="projects-layer">
+            <h4>Wonders Of The World (Modern)</h4>
+            
+             <a href="https://salwa270.github.io/space-journey-html2/"><i class="bx bx-link-external"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+<section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me</span></h2>
+  <div class="contact-icons">
+        <a href="mailto:salwashady934@gmail.com" class="icon gmail">
+      <i class="bi bi-envelope-fill"></i>
+      <span class="text">Gmail</span>
+    </a>
+  </div>
+</section>
+
+<section class="Nasa" id="Nasa">
+  <h2 class="heading">Nasa <span>Project</span></h2>
+  <div class="projects-container">
+    <div class="projects-box">
+      <img src="WhatsApp Image 2025-12-06 at 15.36.33_758ad601.jpg" alt="Nasa App Project" />
+      <div class="projects-layer">
+        <h4>Nasa App Project</h4>
+        
+        <a href="https://salwa270.github.io/nasa-app-html/"><i class="bx bx-link-external"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2025 by salwashady | All Rights Reserved.</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
